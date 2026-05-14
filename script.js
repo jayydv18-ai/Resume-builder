@@ -8,6 +8,17 @@ if (navToggle && siteNav) {
   });
 }
 
+const startBuilderButton = document.getElementById('start-builder-btn');
+const resumeToolSection = document.querySelector('#resume-tool');
+if (startBuilderButton && resumeToolSection) {
+  startBuilderButton.addEventListener('click', (event) => {
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname.endsWith('/')) {
+      event.preventDefault();
+      resumeToolSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+}
+
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', (event) => {
